@@ -267,3 +267,33 @@ public class program {
         }
     }
 }
+
+13.)
+import java.io.*;
+import java.util.*;
+class Main{
+    public static void main(String args[])
+    {
+        int sum=0;
+        Scanner s1=new Scanner(System.in);
+        int n=s1.nextInt();
+        int temp=n;
+        
+        while(n>0)
+        {
+            int num=n%10;
+            sum=(sum*10)+num;
+            n=n/10;
+        }
+        if(temp==sum)
+        {
+         System.out.print(sum+"its a pali");
+         
+        }
+        else{
+            System.out.print(sum+"its not");
+        }
+    }
+}
+
+
