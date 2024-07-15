@@ -337,3 +337,27 @@ class Main{
         }
     }
 }
+16.) 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        String str1=s.nextLine();
+        String[] a=str1.split(" ");
+        for(String x:a)
+        {
+           //System.out.println(x + " ="+x.length());
+            System.out.println(x.charAt(0));
+        }
+//        System.out.println("word in even size");
+        for(String x:a)
+        {
+            if(x.length()%2==0)
+                System.out.println(x);
+        }
+
+    }
+}
+
