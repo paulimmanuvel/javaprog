@@ -337,7 +337,7 @@ class Main{
         }
     }
 }
-16.) 
+16.) printing first letter from word
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
