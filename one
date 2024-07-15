@@ -1,0 +1,269 @@
+1.printing string in given times
+import java.util.Scanner;
+
+public class Main
+{
+    static void PrintString(String str, int n)
+    {
+        for(int i = 0; i < n; i++)
+            System.out.print(str);
+    }
+    
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+        String str = s.next();
+        int num = s.nextInt();
+        s.nextLine(); 
+        PrintString(str, num);
+    }
+}
+
+2.)String palindrome
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s= sc.nextLine();
+        System.out.println(IsPalindrome(s));
+        sc.close();
+    }
+    static boolean IsPalindrome(String s)
+    {
+        for(int i=0;i<s.length()/2;i++)
+        {
+            if(s.charAt(i)!=s.charAt(s.length()-1-i))
+            return false;
+        }
+        return true;
+    }
+}
+
+3.copy char in given string 
+import java.util.Scanner;
+
+public class DoubleCharProg {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine();
+        System.out.println("Given string :" + st);
+        st = DoubleCharString(st);
+        System.out.println(" Modified String :" + st);
+        sc.close();
+
+    }
+
+    static String DoubleCharString(String str) {
+        String s1 = "";
+        for (int i = 0; i < str.length(); i++) {
+            s1 = s1 + str.charAt(i) + str.charAt(i);
+        }
+        return s1;
+    }
+
+}
+
+4.) longest substring in a unit char
+
+import java.util.Scanner;
+
+public class UniqueCharSubStr {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int l = UCSS(s);
+        System.out.println(l);
+        sc.close();
+    }
+
+    static int UCSS(String s) {
+        int len = 0;
+        for (int i = 0; i < s.length() - 2; i++) {
+            for (int j = i + 1; j < s.length(); j++) {
+                String ss = s.substring(i, j);
+                if (UniqueStr(ss)) {
+                    if (len < ss.length())
+                        len = ss.length();
+                }
+            }
+
+        }
+        return len;
+    }
+
+    static boolean UniqueStr(String s) {
+
+        for (int k = 0; k < s.length(); k++) {
+            if (!(s.indexOf(s.charAt(k)) == s.lastIndexOf(s.charAt(k))))
+                return false;
+        }
+        return true;
+    }
+}
+
+5.)armstrong number or not
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);//int sum=0;// 
+		String S=s.nextLine();
+		int a=S.length();
+		int n=Integer.parseInt(S);
+		int temp=n;
+		int t,sum=0;
+		while(n>0){
+		    t=n%10;
+		    sum+=Math.pow(t,a);
+		    n/=10;
+		}
+		if(temp==sum){
+		    System.out.println("Amstrong");
+		}
+		else{
+		    System.out.println("Not an amstrong");
+		}
+	}
+}
+
+6.Write a  program to count the number of 0s and 1s in an array that is in random order. You may assume that the array consists of only 0s and 1s.
+
+#include <stdio.h>
+
+int main() {
+ int n,zeros=0,ones=0;
+ scanf("%d",&n);
+ int arr[n];
+ for(int i=0;i<n;i++)
+     scanf("%d",&arr[i]);
+for(int j=0;j<n;j++)
+{
+    if(arr[j]==0)
+    zeros++;
+    if(arr[j]==1)
+    ones++;
+}
+printf("zeros:%d\nones:%d\n",zeros,ones);
+return 0;
+}
+
+7.) Write a  program to print the count of the elements in an array whose values are lesser than a key element in an unsorted array.
+#include <stdio.h>
+int main() {
+   int n,count=0,key;
+   scanf("%d",&n);
+   int arr[n];
+   for(int i=0;i<n;i++)
+   scanf("%d",&arr[i]);
+   printf("\nKEY value:");
+   scanf("%d",&key);
+   for(int j=0;j<n;j++)
+   {
+       if(key>arr[j])
+       count++;
+   }
+   printf("Count:%d",count);
+    return 0;
+}
+
+8.Write a program to search an element in the given array and print the searched elements index. If no such elements were found print -1
+package Pratice;
+import java.util.Arrays;
+import java.util.Scanner;
+public class program {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int limit = sc.nextInt();
+        int key=sc.nextInt();
+        int[] arr = new int[limit];
+        for (int i = 0; i < limit; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int result=search(arr,key);
+        System.out.print(result);
+    }
+
+    public static int search(int[] arr,int key){
+        for(int i=0;i<arr.length;i++) {
+            if (key == arr[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+}
+
+
+10.You are given an array of 0s and 1s in random order. Segregate 0s on left side and 1s on right side of the array . 
+Input array   =  [0, 1, 0, 1, 0, 0, 1, 1, 1, 0] 
+Output array =  [0, 0, 0, 0, 0, 1, 1, 1, 1, 1] 
+package Pratice;
+import java.util.Arrays;
+import java.util.Scanner;
+public class program {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int limit = sc.nextInt();
+        int[] arr = new int[limit];
+        for (int i = 0; i < limit; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for(int i=0;i<limit;i++){
+            for (int j=1;j<limit;j++){
+                if(arr[j]<arr[j-1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+11.Write a program  to reverse the array elements
+package Pratice;
+import java.util.Arrays;
+import java.util.Scanner;
+public class program {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int limit = sc.nextInt();
+        int[] arr = new int[limit];
+        for (int i = 0; i < limit; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for(int i=0;i<limit/2;i++){
+            int temp=arr[i];
+            arr[i]=arr[arr.length-i-1];
+            arr[arr.length-i-1]=temp;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+12.Write a program  to delete the value at given position from the array.
+package Pratice;
+import java.util.Arrays;
+import java.util.Scanner;
+public class program {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int limit = sc.nextInt();
+        int pos=sc.nextInt();
+        int[] arr = new int[limit];
+        for (int i = 0; i < limit; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for(int i=pos-1;i<limit-1;i++){
+            arr[i]=arr[i+1];
+        }
+        for (int i = 0; i < limit-1; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
